@@ -1,31 +1,43 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
-import { createStackNavigator } from 'react-navigation';
-import { StackNavigator } from 'react-navigation';
+import React from 'react';
+import {TabNavigator} from 'react-navigation';
 
-import Login from './Components/Login';
-import Judul from './Components/Judul';
+import {Home} from './Layar/Home';
+import {hero} from './Layar/hero';
+import {Judul} from './Layar/Judul';
 
-const AppNavigator = createStackNavigator ({
-  Login : Login,
-  Judul : Judul,
+const Tab = TabNavigator({
+  Home: {
+    screen: Home,
+  },
+  hero: {
+    screen: hero,
+  },
+  Judul: {
+    screen: Judul,
+  }
+},{
+  tabBarPosition: 'bottom',
+  swipeEnabled: true,
+  tabBarOptions:{
+    activeTintColor: '#f8f8f8',
+    activeBackgroundColor: '#586589',
+    inactiveTintColor: '#1234',
+    style:{
+      backgroundColor:'#000055',
+    },
 
+    labelStyle: {
+      fontSize: 10,
+      color: 'white',
+      padding: 5,
+    }
+  }
 });
 
-export default class App extends Component<Props> {
+export default class App extends React.Component {
   render() {
     return (
-        <AppNavigator/>
+      <Tab/>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    //'#f87d42'
-  }
-});

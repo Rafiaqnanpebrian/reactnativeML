@@ -10,7 +10,12 @@ export default class Login extends Component {
     render() {
       return (
           <View style={styles.container}>
-            
+            <Image  style={{width:80, height: 80}}
+             source={require('../Components/ts.png')}/>
+            <Text style={tulisan.judul}>STEMATEL</Text>
+            <Text style={tulisan.judul}></Text>
+            <Text style={tulisan.judul}></Text>
+            <Text style={tulisan.judul}></Text>
             <TextInput
                 style = {styles.inputBox}
                 placeholder="Telepon / Email"
@@ -31,7 +36,13 @@ export default class Login extends Component {
         )
     }
 }
-
+const tulisan = {
+    judul : {
+        color : "#000000",
+        fontSize : 25,
+        fontWeight : 'bold',
+    }
+}
 const styles = StyleSheet.create({
     container: {
 	    flex: 1,
